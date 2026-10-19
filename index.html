@@ -145,6 +145,63 @@
             border-radius: 999px;
             background: #414752;
         }
+        .ads-terminal {
+            border-radius: 0.75rem;
+            background: #111318;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        }
+        .ads-terminal__bar {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid rgba(65, 71, 82, 0.4);
+        }
+        .ads-terminal__dot {
+            width: 0.65rem;
+            height: 0.65rem;
+            border-radius: 999px;
+            background: #414752;
+        }
+        .ads-terminal__title {
+            margin-left: auto;
+            font-size: 0.75rem;
+            color: #8b919d;
+        }
+        .ads-terminal__body {
+            display: flex;
+            flex-direction: column;
+            gap: 0.55rem;
+            padding: 1.5rem 1.25rem 1.75rem;
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+        @media (max-width: 640px) {
+            .ads-terminal__body {
+                font-size: 0.7rem;
+            }
+        }
+        .ads-terminal__line {
+            color: #e2e2e9;
+            overflow-wrap: anywhere;
+        }
+        .ads-terminal__line--ok {
+            color: #7fd8a0;
+        }
+        .ads-terminal__line--muted {
+            margin-bottom: 0.5rem;
+            color: #a4c9ff;
+        }
+        .ads-terminal__prompt {
+            color: #4a9eff;
+        }
+        .ads-terminal__cursor {
+            display: inline-block;
+            width: 0.55rem;
+            height: 1rem;
+            vertical-align: text-bottom;
+            background: #a4c9ff;
+        }
     </style>
 <style>
     body {
@@ -383,8 +440,22 @@
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 <div class="order-2 lg:order-1">
 <div class="relative bg-surface-container-highest p-1 rounded-2xl overflow-hidden">
-<img alt="Data Analytics Dashboard" class="w-full rounded-xl opacity-80" data-alt="Technical data dashboard with complex line graphs, bar charts, and growth metrics displayed in a dark blue night-mode interface" decoding="async" height="512" loading="lazy" src="/assets/img/ads-analyzer-dashboard.webp" width="512"/>
-<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+<div class="ads-terminal" role="img" aria-label="Terminal running the Heldig Lab Ads Analyzer">
+<div class="ads-terminal__bar">
+<span class="ads-terminal__dot"></span><span class="ads-terminal__dot"></span><span class="ads-terminal__dot"></span>
+<span class="ads-terminal__title">ads-analyzer</span>
+</div>
+<div class="ads-terminal__body">
+<p class="ads-terminal__line"><span class="ads-terminal__prompt">$</span> ads-analyzer campaigns --range last_7_days</p>
+<p class="ads-terminal__line ads-terminal__line--ok">✓ Connected to Heldig Lab manager account</p>
+<p class="ads-terminal__line ads-terminal__line--muted">→ Campaign and ad group report ready</p>
+<p class="ads-terminal__line"><span class="ads-terminal__prompt">$</span> ads-analyzer search-terms --app focusflow</p>
+<p class="ads-terminal__line ads-terminal__line--muted">→ Keyword and search term breakdown ready</p>
+<p class="ads-terminal__line"><span class="ads-terminal__prompt">$</span> ads-analyzer budgets --suggest</p>
+<p class="ads-terminal__line ads-terminal__line--muted">→ Budget and bid suggestions ready for review</p>
+<p class="ads-terminal__line"><span class="ads-terminal__prompt">$</span> <span class="ads-terminal__cursor"></span></p>
+</div>
+</div>
 </div>
 </div>
 <div class="order-1 lg:order-2">
