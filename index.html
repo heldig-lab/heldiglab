@@ -65,6 +65,86 @@
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+        .hero-phone {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.75rem;
+            background: radial-gradient(circle at 50% 30%, rgba(74, 158, 255, 0.18), transparent 65%);
+        }
+        .hero-phone__screen {
+            position: relative;
+            height: 100%;
+            aspect-ratio: 9 / 17;
+            padding: 2.75rem 1rem 1.5rem;
+            border-radius: 2.25rem;
+            border: 6px solid #2a2d35;
+            background: #111318;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+        }
+        .hero-phone__notch {
+            position: absolute;
+            top: 0.6rem;
+            left: 50%;
+            width: 32%;
+            height: 1.1rem;
+            transform: translateX(-50%);
+            border-radius: 999px;
+            background: #000;
+        }
+        .hero-phone__eyebrow {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #4a9eff;
+        }
+        .hero-phone__title {
+            margin: 0.25rem 0 1rem;
+            font-family: 'Manrope', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: #e2e2e9;
+        }
+        .hero-phone__list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .hero-phone__item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.55rem 0.65rem;
+            border-radius: 0.75rem;
+            background: #1e2026;
+        }
+        .hero-phone__icon {
+            font-size: 1.1rem;
+            color: #a4c9ff;
+        }
+        .hero-phone__name {
+            flex: 1;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #e2e2e9;
+        }
+        .hero-phone__tag {
+            font-size: 0.6rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: #8b919d;
+        }
+        .hero-phone__home {
+            margin: auto auto 0;
+            width: 35%;
+            height: 4px;
+            border-radius: 999px;
+            background: #414752;
+        }
     </style>
 <style>
     body {
@@ -117,7 +197,22 @@
 <div class="relative hidden lg:block">
 <div class="absolute -top-20 -right-20 w-96 h-96 bg-primary/10 blur-[120px] rounded-full"></div>
 <div class="relative aspect-square rounded-3xl bg-surface-container-low border border-outline-variant/15 p-8 shadow-2xl">
-<img alt="Mobile App Interface Design" class="w-full h-full object-cover rounded-xl grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-700" data-alt="Modern smartphone interface showing a sleek wellness app dashboard with minimalist charts and soft blue accents" height="512" src="/assets/img/hero-app-interface.webp" width="512"/>
+<div class="hero-phone" role="img" aria-label="Phone showing the Heldig Lab app portfolio">
+<div class="hero-phone__screen">
+<div class="hero-phone__notch"></div>
+<p class="hero-phone__eyebrow">Heldig Lab</p>
+<p class="hero-phone__title">Our apps</p>
+<ul class="hero-phone__list">
+<li class="hero-phone__item"><span class="material-symbols-outlined hero-phone__icon">timer</span><span class="hero-phone__name">FocusFlow</span><span class="hero-phone__tag">Productivity</span></li>
+<li class="hero-phone__item"><span class="material-symbols-outlined hero-phone__icon">air</span><span class="hero-phone__name">BreathFlow</span><span class="hero-phone__tag">Wellness</span></li>
+<li class="hero-phone__item"><span class="material-symbols-outlined hero-phone__icon">visibility</span><span class="hero-phone__name">EyeRest</span><span class="hero-phone__tag">Health</span></li>
+<li class="hero-phone__item"><span class="material-symbols-outlined hero-phone__icon">hearing</span><span class="hero-phone__name">TinniCalm</span><span class="hero-phone__tag">Medical</span></li>
+<li class="hero-phone__item"><span class="material-symbols-outlined hero-phone__icon">calculate</span><span class="hero-phone__name">MMMAth</span><span class="hero-phone__tag">Learning</span></li>
+<li class="hero-phone__item"><span class="material-symbols-outlined hero-phone__icon">potted_plant</span><span class="hero-phone__name">Verdura</span><span class="hero-phone__tag">Home</span></li>
+</ul>
+<div class="hero-phone__home"></div>
+</div>
+</div>
 </div>
 </div>
 </div>
